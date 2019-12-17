@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>中間課題</title>
+</head>
+<body>
+<p>
+  <button onclick="showAll()">All</button>
+  <button onclick="saburoBOT()">三郎BOT</button>
+  <button onclick="jiro()">次郎</button>
+  <button onclick="taro()">太郎</button>
+<hr>
+<div id="answer">
+</div>
+<script src="https://morimorihoge.github.io/teu2019f/tweets.js"></script>
+<script src="cyuukannkadai.js"></script>
+</body>
+</html>
+
+function showAll() {
+  console.log(tweets);
+  let answer = document.querySelector("#answer");
+  let answerHTML = "";
+
+  answerHTML = "<ul>";
+  let i = 0;
+  while (i < tweets.length) {
+    answerHTML = answerHTML + "<li>"
+        + "<b>" + tweets[i].name + "</b>: "
+        + tweets[i].message + " "
+        + "<i>" + tweets[i].tweetedAt + "</i>"
+        + "</li>";
+    i++;
+  }
+  answerHTML = answerHTML + "</ul>";
+  answer.innerHTML = answerHTML;
+}
+
+
+function saburoBOT() {
+  console.log(tweets);
+  let answer = document.querySelector("#answer");
+  let answerHTML = "";
+
+  answerHTML = "<ul>";
+  let i = 0;
+  while (i < tweets.length) {
+    if(tweets[i].name !== "三郎BOT"){
+      i++;
+      continue;
+    }
+    answerHTML = answerHTML + "<li>"
+        + "<b>" + tweets[i].name + "</b>: "
+        + tweets[i].message + " "
+        + "<i>" + tweets[i].tweetedAt + "</i>"
+        + "</li>";
+    i++;
+  }
+  answerHTML = answerHTML + "</ul>";
+  answer.innerHTML = answerHTML;
+}
+
+
+function jiro() {
+  console.log(tweets);
+  let answer = document.querySelector("#answer");
+  let answerHTML = "";
+
+  answerHTML = "<ul>";
+  let i = 0;
+  while (i < tweets.length) {
+    if(tweets[i].name !== "次郎"){
+      i++;
+      continue;
+    }
+    answerHTML = answerHTML + "<li>"
+        + "<b>" + tweets[i].name + "</b>: "
+        + tweets[i].message + " "
+        + "<i>" + tweets[i].tweetedAt + "</i>"
+        + "</li>";
+    i++;
+  }
+  answerHTML = answerHTML + "</ul>";
+  answer.innerHTML = answerHTML;
+}
+
+function taro() {
+  console.log(tweets);
+  let answer = document.querySelector("#answer");
+  let answerHTML = "";
+
+  answerHTML = "<ul>";
+  let i = 0;
+  while (i < tweets.length) {
+    if(tweets[i].name !== "太郎"){
+      i++;
+      continue;
+    }
+    answerHTML = answerHTML + "<li>"
+        + "<b>" + tweets[i].name + "</b>: "
+        + tweets[i].message + " "
+        + "<i>" + tweets[i].tweetedAt + "</i>"
+        + "</li>";
+    i++;
+  }
+  answerHTML = answerHTML + "</ul>";
+  answer.innerHTML = answerHTML;
+}
